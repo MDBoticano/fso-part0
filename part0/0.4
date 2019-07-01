@@ -1,0 +1,30 @@
+user --> browser: text input into form and "save" button clicked
+
+browser -> server: HTTP POST: https://fullstack-exampleapp.herokuapp.com/new_note
+server -> browser: HTTP Status Code 302 Found: URL redirect
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server -> browser: HTML code
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server --> browser: main.css
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server --> browser: main.js
+
+note over browser:
+browser executes JS code
+and requests data.json
+end note
+
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server --> browser: data.json
+
+note over server:
+the server adds the data from the 
+POST request to the notes array
+end note
+
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+
+note over browser:
+the event handler modifies the DOM
+to display the all the notes
+end note
