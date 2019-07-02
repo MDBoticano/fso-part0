@@ -1,0 +1,21 @@
+user --> browser: text input into form and "save" button clicked
+
+note over browser:
+a new note is created and 
+added to local notes array
+end note
+
+note over browser:
+the display is rerendered 
+to include the new note
+end note
+
+browser -> server: HTTP POST: https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+the server's notes array
+is updated
+end note
+
+server -> browser: HTTP Status Code 201 Created
+
